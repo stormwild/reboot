@@ -1,0 +1,22 @@
+{
+  "name": "reboot",
+  "version": "1.0.0",
+  "description": "The Reboot styles from Bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stormwild/reboot.git"
+  },
+  "author": "Alexander R. Torrijos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stormwild/reboot/issues"
+  },
+  "homepage": "https://github.com/stormwild/reboot#readme",
+  "devDependencies": {
+    "bootstrap": "^5.0.0-beta2"
+  }
+}
