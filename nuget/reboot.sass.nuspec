@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>reboot.sass</id>
+    <!-- pulled from package.json -->
+    <version>1</version>
+    <title>Reboot Sass</title>
+    <authors>Alexander Torrijos</authors>
+    <owners>stormwild</owners>
+    <description>The Reboot styles from Bootstrap.</description>
+    <releaseNotes>https://github.com/stormwild/reboot#readme</releaseNotes>
+    <summary>The Reboot styles from Bootstrap in Sass.</summary>
+    <language>en-us</language>
+    <projectUrl>https://github.com/stormwild/reboot#readme</projectUrl>
+    <icon>stormwild-logo.svg</icon>
+    <license type="file">LICENSE.txt</license>
+    <copyright>Copyright 2021</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>css sass web</tags>
+    <contentFiles>
+      <files include="**/*" buildAction="Content" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="LICENSE.txt" target="" />
+    <file src="nuget\stormwild-logo.svg" target="" />
+
+    <file src="scss\**\*.scss" target="content\Content\reboot" />
+
+    <file src="scss\**\*.scss" target="contentFiles\any\any\wwwroot\scss" />
+  </files>
+</package>

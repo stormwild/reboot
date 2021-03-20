@@ -1,22 +1,57 @@
 {
   "name": "reboot",
-  "version": "1.0.0",
   "description": "The Reboot styles from Bootstrap",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "1.0.0-beta2",
+  "config": {
+    "version_short": "1.0"
   },
+  "keywords": [
+    "css",
+    "sass",
+    "web"
+  ],
+  "homepage": "https://github.com/stormwild/reboot#readme",
+  "author": "Alexander R. Torrijos",
+  "scripts": {
+    "start": "npm-run-all css",
+    "css": "npm-run-all css-compile css-prefix css-minify",
+    "css-compile": "sass --load-path=node_modules/bootstrap/scss --style expanded --source-map --embed-sources --no-error-css scss/:dist/css/",
+    "css-lint": "npm-run-all --continue-on-error --parallel css-lint-*",
+    "css-lint-stylelint": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache --rd",
+    "css-lint-vars": "fusv scss/",
+    "css-minify": "npm-run-all --parallel css-minify-*",
+    "css-minify-main": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\"",
+    "css-prefix": "npm-run-all --parallel css-prefix-*",
+    "css-prefix-main": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.rtl*.css\" \"!dist/css/*.min.css\"",
+    "dist": "npm-run-all --parallel css",
+    "lint": "npm-run-all --parallel css-lint",
+    "test": "npm-run-all lint dist"
+  },
+  "style": "dist/css/reboot.css",
+  "sass": "scss/reboot.scss",
+  "main": "dist/css/reboot.css",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stormwild/reboot.git"
   },
-  "author": "Alexander R. Torrijos",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/stormwild/reboot/issues"
   },
-  "homepage": "https://github.com/stormwild/reboot#readme",
+  "license": "MIT",
   "devDependencies": {
-    "bootstrap": "^5.0.0-beta2"
-  }
+    "autoprefixer": "^10.2.5",
+    "bootstrap": "^5.0.0-beta2",
+    "clean-css-cli": "^5.2.1",
+    "find-unused-sass-variables": "^3.1.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.32.8",
+    "stylelint": "^13.12.0",
+    "stylelint-config-twbs-bootstrap": "^2.1.0"
+  },
+  "files": [
+    "dist/{css,js}/*.{css,js,map}",
+    "scss/**/*.scss"
+  ]
 }

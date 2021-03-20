@@ -1,0 +1,21 @@
+{
+    "name": "stormwild/reboot",
+    "description": "The Reboot styles from Bootstrap",
+    "keywords": [
+        "css",
+        "sass",
+        "web"
+    ],
+    "homepage": "https://github.com/stormwild/reboot#readme",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Alexander Torrijos",
+            "email": "artorrijos@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/stormwild/reboot/issues"
+      },
+    "license": "MIT"
+}
